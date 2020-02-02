@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Details</title>
+</head>
+<body>
+	<h1>Hotel Details</h1>
+	
+	<a href="/hr">Back</a> | 
+	<a href="/logout">Logout</a> 
+
+	<br/>
+	<br/>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>Location</td>
+			<td>Total Room</td>
+			<td>Per Room Price</td>
+			<td>Action</td>
+			<td>Status</td>
+		</tr>
+
+		<% for(var i=0; i < List.length; i++){ %>
+
+		<tr>
+			<td><%= List[i].id %></td>
+			<td><%= List[i].name %></td>
+			<td><%= List[i].location %></td>
+			<td><%= List[i].totalroom %></td>
+			<td><%= List[i].price %></td>
+			
+
+			<td>
+				<a href="">EDIT</a> | 
+				<a href="">DELETE</a>
+			</td>
+			<td><a href="/home/hotel/<%= List[i].status %>/<%= List[i].id %>"><%= List[i].status %></td>
+		</tr>
+
+		<% } %>
+	</table>
+
+</body>
+</html>

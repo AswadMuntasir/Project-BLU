@@ -1,0 +1,170 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="custom.css">
+		<title>project </title>
+		<style>
+		.center {
+		  margin: auto;
+		  width: 60%;
+		  
+		  padding: 10px;
+
+		}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script type="text/javascript" src="./valid.js"></script>
+	</head>
+
+	<body >
+		
+			<br/>
+			<form method="POST" id="formvalid">
+			<div class="container center">
+				<div class="row">
+					<div class="col-xs-8">
+						<fieldset>
+	                	<legend align="center"> <h3>Creat New Receptionist</h3></legend>
+						
+						<br/><br/>
+						<fieldset>
+	                	<legend> <font color="#e60000"><h3>LOGIN INFORMATION</h3></font> </legend>
+						<div class="form-row">
+
+							<div class="col">
+
+								<label for="name" ><h4>Name</h4></label> <!-- first name label -->
+					      		<input type="text" class="form-control form-control-lg" name="name" placeholder="Name" id="name" required>
+					      		<label for="name" ><h4 id="error1"> </h4> </label>
+					      		
+							</div>
+							<div class="col">
+						      <label for="email"><h4>Email</h4></label> <!-- last name -->
+						      <input type="email" class="form-control form-control-lg" name="email" placeholder="anything@example.com" id="email" required> <!-- last name text bar -->
+						      <label for="email" ><h4 id ="error2"> </h4></label>
+						      
+						    </div>
+
+						</div>
+						<br/>
+						<div class="form-group">
+							<div>
+								<label for="password"><h4>Password</h4></label>
+							    <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Give password" required>
+							    <label for="password"><%= error.passworderror %></label>
+							    <large id="passwordHelpBlock" class="form-text text-muted"><h5>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</h5>
+					    	
+						  
+								</large>
+							</div>
+							<br/>
+							<div>
+								<label for="Cpassword"><h4>Confirm Password</h4></label>
+							    <input type="password" class="form-control form-control-lg" id="cpass" name="cpass" placeholder="Give same password" required>
+							    <label for="Cpassword" ><h4 id ="errorcpass"> </h4></label>
+							    <large id="passwordHelpBlock" class="form-text text-muted"><h5>Your password must be same here.</h5>
+						  
+								</large>
+							</div>
+
+						</div>
+						</fieldset>
+						<br/>
+						<fieldset>
+                		<legend> <font color="#e60000"><h3>PERSONAL INFORMATION</h3></font> </legend>
+                		<br/>
+                		<div class="form-grou">
+                			<div>
+                				<label for="dob"><h4>Date Of Birth</h4></label>
+					   		    <input type="Date" class="form-control form-control-lg" name="dob" id="dob" required>
+					   		    <label for="dob" ><h4 id ="errordob"> </h4></label>
+                			</div>
+                		</div>
+                		<div>
+                		<br/>
+						<!-- gender -->
+						<label for="Gender"><h4>Gender</h4></label>
+						<br/>
+						<div class="form-check form-check-inline">
+						  &nbsp; &nbsp; &nbsp;<input class="form-check-input" type="radio" id="Gender" name="gender" value="Male" required>
+						  <label class="form-check-label" for="Male"><h5>Male</h5></label>
+						</div>
+						<div class="form-check form-check-inline">  
+						  &nbsp; &nbsp; &nbsp;<input class="form-check-input" type="radio" id="Gender" name="gender" value="Female" required>
+						  <label class="form-check-label" for="Female"><h5>Female</h5></label>
+						</div>
+						<div class="form-check form-check-inline">  
+						  &nbsp; &nbsp; &nbsp;<input class="form-check-input" type="radio" id="Gender" name="gender" value="Other" required>
+						  <label class="form-check-label" for="Other"><h5>Other</h5></label>
+						</div>
+						</div>
+						<label for="gender" ><h4></h4></label>
+						<br/>
+						<div class="form-row">
+							<div class="col">
+								<label for="salary"><h4>Salary</h4></label>
+								<input type="number" class="form-control form-control-lg" name="salary" id="salary" required>
+								<label for="salary"><h4 id="errorweight"></h4></label>
+							</div>
+							
+						</div>
+						
+						<br/>
+						</fieldset>
+					</fieldset>
+					<fieldset>
+	                	<legend > <font color="#e60000"><h3>CONTACT INFORMATION</h3></font></legend>
+	                	<div>
+	                		<label for="phone"><h4>Phone No</h4></label>
+							<input type="number" class="form-control form-control-lg" name="phone" id="phone" required>
+							<label for="phone"><h4></h4></label>
+	                	</div>
+	                	<br/>
+	                	<div>
+	                		<label for="address"><h4>Adrress</h4></label>
+	                		<input type="text" class="form-control form-control-lg" name="address" id="address" required >
+	                		<label for="address"><h4></h4></label>
+	                	</div>
+	                	<br/>
+	                	<div>
+								<label for="hotel"><h4>Hotel Name</h4></label>
+								<select class="form-control form-control-lg" name="hotel" id="hotel" required>
+									<option value="null"><h1>---Select---</h1></option>
+									<% for(var i=0; i < List.length; i++){ %>
+									<option value="<%= List[i].name %>"><h4><%= List[i].name %></h4></option>
+									<% } %>
+									
+								</select>
+								<label for="hotel"><h4></h4></label>
+						</div>
+						<br/>	
+
+	                </fieldset>	
+
+						<br/>
+							<input type="submit" class="btn btn-lg btn-success" name="create" value="Create"/>
+					</div>
+					
+				</div>
+				
+			</div>
+			</form>
+               
+	</body>
+
+
+
+
+</html>

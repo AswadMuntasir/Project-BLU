@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HR List</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+	<u><h1 align="center">UserList</h1></u>
+	
+	
+    <h2 align="right"><a href="/admin">Back</a>|
+	<a href="/logout">Logout</a> </h2>
+	</a>
+	<form method="post">
+	Search by name: <input type="text" name="username1" >
+	<input type="submit" name="submit" value="Search"> 
+	
+	<a href="/admin/user_List">View ALL</a> 
+	
+	
+	<br>
+	</br>
+       
+	<table class="table" border="1">
+	  <thead class="thead-dark">
+		<tr>
+			<td>ID</td>
+			<td>Username</td>
+			<td>Email</td>
+			<td>Contact</td>
+			<td>Address</td>
+			<td>Gender</td>
+			<td>Date Of Birth</td>
+			<td>Salary</td>
+			<td>Password</td>
+			
+			<td>Action</td>
+			<td>Status</td>
+			
+		</tr>
+	   </thead>
+	   <tbody>
+
+ 
+		<% for(var i=0; i < userList.length; i++){ %>
+
+		<tr>
+			<td><%= userList[i].id %></td>
+			<td><%= userList[i].username %></td>
+			<td><%= userList[i].email %></td>
+			<td><%= userList[i].contact %></td>
+			<td><%= userList[i].address %></td>
+			<td><%= userList[i].gender %></td>
+			<td><%= userList[i].dateofbirth %></td>
+			<td><%= userList[i].salary %></td>
+			<td><%= userList[i].password %></td>
+			
+			
+			<td>
+				<a href="/admin/edit/<%= userList[i].id %>">EDIT</a> | 
+				<a href="/admin/delete/<%= userList[i].id %>">DELETE</a>|
+			
+	
+	  </td>
+	  <td>
+		<a href="/admin/<%= userList[i].status %>/<%= userList[i].id %>"><%= userList[i].status %></a> 
+		</td>
+			
+		</tr>
+
+		<% } %>
+		</tbody>
+	</table>
+	</form>
+	
+
+</body>
+</html>

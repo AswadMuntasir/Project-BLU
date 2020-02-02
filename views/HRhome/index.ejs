@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+</head>
+<body>
+	<form method="POST">
+
+		<h1>Home Page</h1>
+		<a href="/home">Back To Home</a>
+		<p>Welcome HR </p>
+
+
+		<a href="/HR/add_receptionist">Insert Receptionist</a> |
+		<a href="/HR/view_receptionist">View All Receptionist</a> 
+
+		<br/><br/>
+
+		<a href="/HR/add_hotel">Add Hotel</a> |
+		<a href="./hotel-resto">View All Hotel</a> 
+
+		<br/> <br/><br/> 
+		<a href="/logout">Logout</a> 
+		<br/>
+		<br/>
+		<h4>Communicate With Admin :</h4>
+		<h4>Message :</h4>
+		To:
+		<select class="form-control form-control-lg" name="reciever" id="reciever">
+			<option value="null"><h1>---Select---</h1></option>
+			<option value="Admin"><h4>Admin</h4></option>
+			<option value="Receptionist"><h4>Receptionist</h4></option>
+		</select><br/><br/>
+		<input type="text" name="sms" required>
+		<input type="submit" name="send" value="Send">
+		<br/>
+		<br/>
+		<a href="/HR/view_sms">View SMS</a> 
+	</form>
+
+</body>
+</html>

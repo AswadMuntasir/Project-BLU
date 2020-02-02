@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Receptionist Details</title>
+</head>
+<body>
+	<h1>Receptionist Details</h1>
+	
+	<a href="/hr">Back</a> | 
+	<a href="/logout">Logout</a> 
+	<form method="post">
+		<h4>Search By Name :</h4>
+		<input type="text" name="name">
+		<input type="submit" name="search" value="Search">
+		<br/><br/>
+		<a href="/home/view_receptionist">View All</a> 
+	</form>
+	
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Username</td>
+			<td>Email</td>
+			<td>Password</td>
+			<td>DOB</td>
+			<td>Gender</td>
+			<td>Salary</td>
+			<td>Phone No</td>
+			<td>Address</td>
+			<td>Hotel Name</td>
+			<td>Action</td>
+			<td>Status</td>
+		</tr>
+
+		<% for(var i=0; i < List.length; i++){ %>
+
+		<tr>
+			<td><%= List[i].id %></td>
+			<td><%= List[i].name %></td>
+			<td><%= List[i].email %></td>
+			<td><%= List[i].password %></td>
+			<td><%= List[i].dob %></td>
+			<td><%= List[i].gender %></td>
+			<td><%= List[i].salary %></td>
+			<td><%= List[i].phone %></td>
+			<td><%= List[i].address %></td>
+			<td><%= List[i].hotelname %></td>
+
+			<td>
+				<a href="/home/editreceptionist/<%= List[i].id %>">EDIT</a> | 
+				<a href="/home/deletereceptionist/<%= List[i].id %>">DELETE</a>
+			</td>
+			<td><a href="/home/<%= List[i].status %>/<%= List[i].id %>"><%= List[i].status %></a></td>
+		</tr>
+
+		<% } %>
+	</table>
+
+</body>
+</html>

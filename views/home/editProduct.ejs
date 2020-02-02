@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit page</title>
+</head>
+<body>
+	<h1>Edit Product</h1>
+
+	<a href="/home/product_list">Back</a> | 
+	<a href="/logout">Logout</a> 
+
+	<form method="post">
+		<table>
+			<tr>
+				<td>Id: </td>
+				<td><%=product.id%></td>
+			</tr>
+			<tr>
+				<td>Product Name: </td>
+				<td><input type="text" name="productName" value="<%=product.pName%>"></td>
+			</tr>
+			<tr>
+				<td>Quantity: </td>
+				<td><input type="text" name="quantity" value="<%=product.pQuantity%>"> </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Submit"> </td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

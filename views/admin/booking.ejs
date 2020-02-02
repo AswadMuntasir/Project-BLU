@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bookings</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+	<u><h1 align="center">Bookings</h1></u>
+	
+	
+    <h2 align="right"><a href="/admin">Back</a>|
+	<a href="/logout">Logout</a> </h2>
+	</a>
+	<form method="post">
+	Search by hotel name: <input type="text" name="name1" >
+	<input type="submit" name="submit" value="Search"> 
+	
+	<a href="/admin/booking">View ALL</a> 
+	
+	
+	<br>
+	</br>
+       
+	<table class="table" border="1">
+	  <thead class="thead-dark">
+		<tr>
+			<td>ID</td>
+	         <td>userID</td>
+			<td>hotelid</td>
+			<td>hName</td>
+			<td>hAddress</td>
+			<td>roomType</td>
+			<td>checkin</td>
+			<td>checkout</td>
+			<td>paid</td>
+			<td>due</td>
+			<td>status</td>
+			
+			
+			
+		</tr>
+	   </thead>
+	   <tbody>
+
+ 
+		<% for(var i=0; i < booking.length; i++){ %>
+
+		<tr>
+			<td><%= booking[i].id %></td>
+			<td><%= booking[i].userID %></td>
+			<td><%= booking[i].hotelid %></td>
+			<td><%= booking[i].hName %></td>
+			<td><%= booking[i].hAddress %></td>
+			<td><%= booking[i].roomType %></td>
+			<td><%= booking[i].checkin %></td>
+			<td><%= booking[i].checkout %></td>
+			<td><%= booking[i].paid %></td>
+			<td><%= booking[i].due%></td>
+			<td><%= booking[i].status %></td>
+			
+			
+			
+			
+	 
+			
+		</tr>
+
+		<% } %>
+		</tbody>
+	</table>
+	</form>
+	
+
+</body>
+</html>

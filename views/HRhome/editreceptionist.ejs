@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Receptionist</title>
+</head>
+<body>
+	<h1>Update Receptionist</h1>
+
+	<a href="/HR/view_receptionist">Back</a> | 
+	<a href="/logout">Logout</a> 
+
+	<form method="post">
+		<table align="center">
+			<tr>
+				<td>Id: </td>
+				<td> <%= receptionist.id %> </td>
+			</tr>
+			<tr>
+				<td>Name: </td>
+				<td><input type="text" name="name" value="<%=receptionist.name%>" required></td>
+			</tr>
+			<tr>
+				<td>Email: </td>
+				<td><input type="email" name="email" value="<%=receptionist.email%>" required> </td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" name="password" value="<%=receptionist.password%>" required> </td>
+			</tr>
+			<tr>
+				<td>Date of Birth: </td>
+				<td><input type="dob" name="dob" value="<%=receptionist.dob%>" required> </td>
+			</tr>
+			<tr>
+				<td>Gender: </td>
+				<td><input type="gender" name="gender" value="<%=receptionist.gender%>" required> </td>
+			</tr>
+			<tr>
+				<td>Salary: </td>
+				<td><input type="salary" name="salary" value="<%=receptionist.salary%>" required> </td>
+			</tr>
+			<tr>
+				<td>Phone: </td>
+				<td><input type="phone" name="phone" value="<%=receptionist.phone%>" required> </td>
+			</tr>
+			<tr>
+				<td>Address: </td>
+				<td><input type="address" name="address" value="<%=receptionist.address%>" required> </td>
+			</tr>
+			<tr>
+				<td>Hotel: </td>
+				<td>
+				<select name="hotel" id="hotel" required>
+					<option value="null"><h1>---Select---</h1></option>
+					<% for(var i=0; i < List.length; i++){ %>
+					<option value="<%= List[i].name %>"><h4><%= List[i].name %></h4></option>
+					<% } %>
+					
+				</select>
+				</td>
+
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="Update" value="Update"> </td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

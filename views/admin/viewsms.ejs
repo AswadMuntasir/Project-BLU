@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMS Details</title>
+</head>
+<body>
+	<h1>SMS</h1>
+	
+	<a href="/home">Back</a> | 
+	<a href="/logout">Logout</a> 
+
+	<br>
+	<br>
+
+	<h4>Message from Admin :</h4>
+	<table>
+		<tr>
+			<td>Admin</td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	</td>
+			<td>SMS</td>
+		</tr>
+		<% for(var i=0; i < List.length; i++){ %>
+
+		<tr>
+			<td><%= List[i].sender %></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	</td>
+			<td><%= List[i].sms %></td>
+		</tr>
+
+		<% } %>
+	</table>
+
+</body>
+</html>

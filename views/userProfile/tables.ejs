@@ -1,0 +1,130 @@
+<!doctype html>
+<html><head>
+    <meta charset="utf-8">
+    <title>BLU - USER </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="/assets/userProfile/bootstrap/css/bootstrap.min.css" />
+
+    <!-- DATA TABLE CSS -->
+    <link href="/assets/userProfile/css/table.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/assets/userProfile/js/jquery.js"></script>    
+    <script type="text/javascript" src="/assets/userProfile/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/assets/userProfile/js/admin.js"></script>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        
+  	<!-- Google Fonts call. Font Used Open Sans -->
+  	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+  	<!-- DataTables Initialization -->
+    <script type="text/javascript" src="/assets/userProfile/js/datatables/jquery.dataTables.js"></script>
+  			<script type="text/javascript" charset="utf-8">
+  			    $(document).ready(function () {
+  			        $('#dt1').dataTable();
+  			    });
+	</script>
+
+    
+  </head>
+  <body>
+  
+  	<!-- NAVIGATION MENU -->
+
+    <div class="navbar-nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/userProfile"><img src="/assets/userProfile/images/logo30.png" alt=""> USER DASHBOARD </a>
+        </div> 
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/home"><i class="icon-home icon-white"></i> BLU | Home </a></li>                            
+              <li class="active"><a href="tables"><i class="icon-th icon-white"></i> Bookings</a></li>
+              <li><a href="/login"><i class="icon-lock icon-white"></i> Log Out</a></li>
+              <li><a href="user"><i class="icon-user icon-white"></i> User</a></li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+
+      <!-- CONTENT -->
+	<div class="row">
+		<div class="col-sm-12 col-lg-12">
+			<h4><strong>Bookings</strong></h4>
+			  <table class="display">
+	          <thead>
+              <form method="get">
+	            <tr>
+	              <th>Hotel Name</th>
+                <th>Hotel Address</th>
+                <th>Status</th>
+	              <th>Check IN</th>
+	              <th>Check Out</th>
+	              <th>Paid</th>
+	              <th>Due</th>
+                <th>Status</th>
+                <th>Cancel</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+              <% for(var i=0; i < bookingDetails.length; i++){ %>
+	            <tr class="odd">
+	              <td><%= bookingDetails[i].hName %></td>
+	              <td><%= bookingDetails[i].hAddress %></td>
+                <td><%= bookingDetails[i].roomType %></td>
+	              <td><%= bookingDetails[i].checkin %></td>
+	              <td><%= bookingDetails[i].checkout %></td>
+	              <td><%= bookingDetails[i].paid %></td>
+                <td><%= bookingDetails[i].due %></td>
+                <td><%= bookingDetails[i].status %></td>
+                <input hidden="hidden" type="number" name="bookingID" value="<%= bookingDetails[i].id %>" >
+                <td> <a class="btn btn-info" href="/userProfile/tables/<%= bookingDetails[i].id %>" type="submit">Cancel</a></td>
+	            </tr>
+            </form>
+              <% } %>
+	          </tbody>
+	         </table><!--/END First Table -->
+			 <br>
+	
+		</div><!--/span12 -->
+      </div><!-- /row -->
+     </div> <!-- /container -->
+    	<br>	
+      	<br>
+	<!-- FOOTER -->	
+	<div id="footerwrap">
+      	<footer class="clearfix"></footer>
+      	<div class="container">
+      		<div class="row">
+      			<div class="col-sm-12 col-lg-12">
+      			<p><img src="/assets/userProfile/images/logo.png"" alt=""></p>
+      			<p>BLU booking system - Copyright 2019</p>
+      			</div>
+
+      		</div><!-- /row -->
+      	</div><!-- /container -->		
+	</div><!-- /footerwrap -->
+
+</body></html>
